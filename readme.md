@@ -1,1 +1,1 @@
-Guruputan's Youtube tutorial on Angular / Laravel
+Guruputran's Youtube tutorial on Angular / Laravel
