@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup, FormArray } from '@angular/forms';
+declare var jQuery:any;
+import * as $ from 'jquery';
 
 @Component({
   selector: 'app-dform',
@@ -7,29 +8,13 @@ import { FormBuilder, FormGroup, FormArray } from '@angular/forms';
   styleUrls: ['./dform.component.css']
 })
 export class DformComponent implements OnInit {
-orderForm: FormGroup;
-items: FormArray;
 
-constructor(private formBuilder: FormBuilder) {}
+constructor() {}
 ngOnInit() {
-  this.orderForm = this.formBuilder.group({
-    customerName: '',
-    email: '',
-    items: this.formBuilder.array([ this.createItem() ])
-  });
-}
+  
+  jQuery(function($){
+  $('.table').footable();
+});
 
-createItem(): FormGroup {
-  return this.formBuilder.group({
-    name: '',
-    description: '',
-    price: ''
-  });
 }
-
-addItem(): void {
-  this.items = this.orderForm.get('items') as FormArray;
-  this.items.push(this.createItem());
-}
-
 }

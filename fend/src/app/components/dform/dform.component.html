@@ -1,11 +1,37 @@
-<div [formGroup]="orderForm">
-<div formArrayName="items"
-  *ngFor="let item of orderForm.get('items').controls; let i = index;">
-  <div [formGroupName]="i">
-    <input formControlName="name" placeholder="Item name">
-    <input formControlName="description" placeholder="Item description">
-    <input formControlName="price" placeholder="Item price">
-  </div>
-  Chosen name: {{ orderForm.controls.items.controls[i].controls.name.value }}
+<div class="container">
+<div class="row">
+<div class="col-sm-6">
+<table class="table">
+            <thead>
+            <tr>
+                <th>Id</th>
+                <th data-breakpoints="lg xs md sm">First Name</th>
+                <th data-breakpoints="lg xs md sm">Last Name</th>
+                <th data-breakpoints="lg xs md sm">Age</th>
+                <th data-breakpoints="lg xs md sm">Living place</th>
+                <th data-breakpoints="lg xs md sm">Hobbies</th>
+                <th>Pets</th>
+                <th>Social activity</th>
+            </tr>
+            </thead>
+
+            <tbody>
+               
+            <tr>
+                <td>1234</td>
+                <td>Item2</td>
+                <td>Item3</td>
+                <td>Item4</td>
+                <td>Item3</td>
+                <td>Item4</td>
+                <td>Item5</td>
+                <td>Item6</td>
+            </tr>
+            
+            </tbody>
+
+        </table>
+</div>
+<div class="col-sm-6">
 </div>
 </div>
